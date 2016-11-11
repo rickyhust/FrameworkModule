@@ -14,8 +14,7 @@
 		181E0C231DD1E32C00FDFF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181E0C221DD1E32C00FDFF40 /* Assets.xcassets */; };
 		181E0C261DD1E32C00FDFF40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181E0C241DD1E32C00FDFF40 /* LaunchScreen.storyboard */; };
 		181E0C311DD1E32C00FDFF40 /* FrameworkModuleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 181E0C301DD1E32C00FDFF40 /* FrameworkModuleDemoTests.m */; };
-		181E0C3C1DD1E3C800FDFF40 /* FrameworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181E0C3B1DD1E3C800FDFF40 /* FrameworkModule.framework */; };
-		181E0C3D1DD1E47600FDFF40 /* FrameworkModule.framework in Resources */ = {isa = PBXBuildFile; fileRef = 181E0C3B1DD1E3C800FDFF40 /* FrameworkModule.framework */; };
+		181E0C4A1DD2EE6D00FDFF40 /* FrameworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181E0C441DD2EC4300FDFF40 /* FrameworkModule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +24,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 181E0C121DD1E32C00FDFF40;
 			remoteInfo = FrameworkModuleDemo;
+		};
+		181E0C431DD2EC4300FDFF40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 181E0BD51DD1CC9C00FDFF40;
+			remoteInfo = FrameworkModule;
+		};
+		181E0C451DD2EC4300FDFF40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 181E0BDE1DD1CC9C00FDFF40;
+			remoteInfo = FrameworkModuleTests;
+		};
+		181E0C471DD2ECB600FDFF40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 181E0BD41DD1CC9C00FDFF40;
+			remoteInfo = FrameworkModule;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,7 +62,7 @@
 		181E0C2C1DD1E32C00FDFF40 /* FrameworkModuleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameworkModuleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		181E0C301DD1E32C00FDFF40 /* FrameworkModuleDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameworkModuleDemoTests.m; sourceTree = "<group>"; };
 		181E0C321DD1E32C00FDFF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		181E0C3B1DD1E3C800FDFF40 /* FrameworkModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FrameworkModule.framework; sourceTree = SOURCE_ROOT; };
+		181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrameworkModule.xcodeproj; path = ../../FrameworkModule/FrameworkModule.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181E0C3C1DD1E3C800FDFF40 /* FrameworkModule.framework in Frameworks */,
+				181E0C4A1DD2EE6D00FDFF40 /* FrameworkModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +105,7 @@
 		181E0C151DD1E32C00FDFF40 /* FrameworkModuleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				181E0C3B1DD1E3C800FDFF40 /* FrameworkModule.framework */,
+				181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */,
 				181E0C191DD1E32C00FDFF40 /* AppDelegate.h */,
 				181E0C1A1DD1E32C00FDFF40 /* AppDelegate.m */,
 				181E0C1C1DD1E32C00FDFF40 /* ViewController.h */,
@@ -116,6 +136,15 @@
 			path = FrameworkModuleDemoTests;
 			sourceTree = "<group>";
 		};
+		181E0C3F1DD2EC4300FDFF40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				181E0C441DD2EC4300FDFF40 /* FrameworkModule.framework */,
+				181E0C461DD2EC4300FDFF40 /* FrameworkModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,10 +155,12 @@
 				181E0C0F1DD1E32C00FDFF40 /* Sources */,
 				181E0C101DD1E32C00FDFF40 /* Frameworks */,
 				181E0C111DD1E32C00FDFF40 /* Resources */,
+				181E0C4B1DD2F01C00FDFF40 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				181E0C481DD2ECB600FDFF40 /* PBXTargetDependency */,
 			);
 			name = FrameworkModuleDemo;
 			productName = FrameworkModuleDemo;
@@ -185,6 +216,12 @@
 			mainGroup = 181E0C0A1DD1E32C00FDFF40;
 			productRefGroup = 181E0C141DD1E32C00FDFF40 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 181E0C3F1DD2EC4300FDFF40 /* Products */;
+					ProjectRef = 181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				181E0C121DD1E32C00FDFF40 /* FrameworkModuleDemo */,
@@ -193,12 +230,28 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		181E0C441DD2EC4300FDFF40 /* FrameworkModule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FrameworkModule.framework;
+			remoteRef = 181E0C431DD2EC4300FDFF40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		181E0C461DD2EC4300FDFF40 /* FrameworkModuleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FrameworkModuleTests.xctest;
+			remoteRef = 181E0C451DD2EC4300FDFF40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		181E0C111DD1E32C00FDFF40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181E0C3D1DD1E47600FDFF40 /* FrameworkModule.framework in Resources */,
 				181E0C261DD1E32C00FDFF40 /* LaunchScreen.storyboard in Resources */,
 				181E0C231DD1E32C00FDFF40 /* Assets.xcassets in Resources */,
 				181E0C211DD1E32C00FDFF40 /* Main.storyboard in Resources */,
@@ -213,6 +266,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		181E0C4B1DD2F01C00FDFF40 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -R ${BUILT_PRODUCTS_DIR}/FrameworkModule.framework ${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		181E0C0F1DD1E32C00FDFF40 /* Sources */ = {
@@ -240,6 +309,11 @@
 			isa = PBXTargetDependency;
 			target = 181E0C121DD1E32C00FDFF40 /* FrameworkModuleDemo */;
 			targetProxy = 181E0C2D1DD1E32C00FDFF40 /* PBXContainerItemProxy */;
+		};
+		181E0C481DD2ECB600FDFF40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FrameworkModule;
+			targetProxy = 181E0C471DD2ECB600FDFF40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -426,6 +500,7 @@
 				181E0C371DD1E32C00FDFF40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		181E0C381DD1E32C00FDFF40 /* Build configuration list for PBXNativeTarget "FrameworkModuleDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +509,7 @@
 				181E0C3A1DD1E32C00FDFF40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
