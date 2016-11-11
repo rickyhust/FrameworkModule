@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		181E0C511DD5C16000FDFF40 /* CommonFrameworkModule */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 181E0C541DD5C16000FDFF40 /* Build configuration list for PBXAggregateTarget "CommonFrameworkModule" */;
+			buildPhases = (
+				181E0C551DD5C17A00FDFF40 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonFrameworkModule;
+			productName = CommonFrameworkModule;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		181E0BDF1DD1CC9C00FDFF40 /* FrameworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181E0BD51DD1CC9C00FDFF40 /* FrameworkModule.framework */; };
 		181E0BE41DD1CC9C00FDFF40 /* FrameworkModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 181E0BE31DD1CC9C00FDFF40 /* FrameworkModuleTests.m */; };
@@ -204,6 +218,10 @@
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
+					181E0C511DD5C16000FDFF40 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 181E0BCF1DD1CC9C00FDFF40 /* Build configuration list for PBXProject "FrameworkModule" */;
@@ -220,6 +238,7 @@
 			targets = (
 				181E0BD41DD1CC9C00FDFF40 /* FrameworkModule */,
 				181E0BDD1DD1CC9C00FDFF40 /* FrameworkModuleTests */,
+				181E0C511DD5C16000FDFF40 /* CommonFrameworkModule */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +264,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		181E0C551DD5C17A00FDFF40 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=${PROJECT_NAME}\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n\n#open \"${INSTALL_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		181E0BD01DD1CC9C00FDFF40 /* Sources */ = {
@@ -431,6 +466,20 @@
 			};
 			name = Release;
 		};
+		181E0C521DD5C16000FDFF40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		181E0C531DD5C16000FDFF40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,12 +499,22 @@
 				181E0BEB1DD1CC9C00FDFF40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		181E0BEC1DD1CC9C00FDFF40 /* Build configuration list for PBXNativeTarget "FrameworkModuleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				181E0BED1DD1CC9C00FDFF40 /* Debug */,
 				181E0BEE1DD1CC9C00FDFF40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181E0C541DD5C16000FDFF40 /* Build configuration list for PBXAggregateTarget "CommonFrameworkModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181E0C521DD5C16000FDFF40 /* Debug */,
+				181E0C531DD5C16000FDFF40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

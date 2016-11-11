@@ -39,12 +39,12 @@
 			remoteGlobalIDString = 181E0BDE1DD1CC9C00FDFF40;
 			remoteInfo = FrameworkModuleTests;
 		};
-		181E0C471DD2ECB600FDFF40 /* PBXContainerItemProxy */ = {
+		181E0C581DD5C41800FDFF40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 181E0C3E1DD2EC4300FDFF40 /* FrameworkModule.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 181E0BD41DD1CC9C00FDFF40;
-			remoteInfo = FrameworkModule;
+			remoteGlobalIDString = 181E0C511DD5C16000FDFF40;
+			remoteInfo = CommonFrameworkModule;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -160,7 +160,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				181E0C481DD2ECB600FDFF40 /* PBXTargetDependency */,
+				181E0C591DD5C41800FDFF40 /* PBXTargetDependency */,
 			);
 			name = FrameworkModuleDemo;
 			productName = FrameworkModuleDemo;
@@ -279,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -R ${BUILT_PRODUCTS_DIR}/FrameworkModule.framework ${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app";
+			shellScript = "cp -R ${SRCROOT}/../FrameworkModule/Products/FrameworkModule.framework ${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -310,10 +310,10 @@
 			target = 181E0C121DD1E32C00FDFF40 /* FrameworkModuleDemo */;
 			targetProxy = 181E0C2D1DD1E32C00FDFF40 /* PBXContainerItemProxy */;
 		};
-		181E0C481DD2ECB600FDFF40 /* PBXTargetDependency */ = {
+		181E0C591DD5C41800FDFF40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FrameworkModule;
-			targetProxy = 181E0C471DD2ECB600FDFF40 /* PBXContainerItemProxy */;
+			name = CommonFrameworkModule;
+			targetProxy = 181E0C581DD5C41800FDFF40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
